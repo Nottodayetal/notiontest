@@ -1,0 +1,30 @@
+; FlowCast Microphone INF scaffold.
+; This is not an installable production driver.
+; Replace Provider/Class/CopyFiles/Services sections with the real SYSVAD-derived
+; package and submit the final driver through Microsoft Hardware Dev Center.
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=MEDIA
+ClassGuid={4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider=%ProviderName%
+DriverVer=05/26/2026,0.1.0.0
+CatalogFile=FlowCastVirtualMic.cat
+PnpLockdown=1
+
+[Manufacturer]
+%ManufacturerName%=FlowCast,NTamd64
+
+[FlowCast.NTamd64]
+%FlowCastMic.DeviceDesc%=FlowCastMic_Device, ROOT\FLOWCASTVIRTUALMIC
+
+[FlowCastMic_Device.NT]
+; Real SYSVAD-derived copy and registry directives go here.
+
+[FlowCastMic_Device.NT.Services]
+; Real service installation directive goes here.
+
+[Strings]
+ProviderName="FlowCast"
+ManufacturerName="FlowCast"
+FlowCastMic.DeviceDesc="FlowCast Microphone"
